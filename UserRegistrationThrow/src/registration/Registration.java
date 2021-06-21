@@ -76,7 +76,7 @@ public class Registration {
 		if(check)
 			return true;
 		else
-			throw new ValidationException("Invalid Email id");
+			throw new ValidationException("Invalid password");
 	}
 
 	public static void main(String[] args) throws ValidationException {

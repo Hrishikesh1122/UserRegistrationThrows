@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+C:\Users\Hrishikesh\Desktop\Java_assignments\UserRegistrationThrow\.metadata\.plugins\org.eclipse.jdt.core
+1642175237.index

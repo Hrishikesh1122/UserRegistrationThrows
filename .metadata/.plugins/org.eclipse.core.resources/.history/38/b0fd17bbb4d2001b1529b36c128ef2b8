@@ -1,0 +1,84 @@
+package registration;
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+
+public class Registration {
+	
+	/**
+	 * Contains regex pattern to test Firstname
+	 * @param firstName
+	 * @return True if matches regex pattern orterwise false
+	 * @throws ValidationException 
+	 */
+	public  boolean getFirstName(String firstName) throws ValidationException {
+		boolean check= Pattern.matches("[A-Z]+[a-z]{2,}", firstName);
+		if(check)
+			return true;
+		else
+			throw new ValidationException("Invalid First name");
+	}
+	
+	/**
+	 * Contains regex pattern to test Last name
+	 * @param lastName
+	 * @return True if matches regex pattern orterwise false
+	 * @throws ValidationException 
+	 */
+	public boolean getLastName(String lastName) throws ValidationException {
+		boolean check= Pattern.matches("[A-Z]+[a-z]{2,}", lastName);
+		if(check)
+			return true;
+		else
+			throw new ValidationException("Invalid Last Name");
+	}
+	
+	/**
+	 * Contains regex pattern to test phone number
+	 * @param phone
+	 * @return True if matches regex pattern orterwise false
+	 * @throws ValidationException 
+	 */
+	public boolean getPhoneNumber(String phone) throws ValidationException {
+		boolean check= Pattern.matches("^[1-9][0-9]\s[1-9]{10}$", phone);
+		if(check)
+			return true;
+		else
+			throw new ValidationException("Invalid Phone number");
+	}
+	
+	/**
+	 * Contains regex pattern to test email id.
+	 * @param email
+	 * @return True if matches regex pattern otherwise false
+	 * @throws ValidationException 
+	 */
+	public boolean getEmail(String email) throws ValidationException {
+		boolean check= Pattern.matches("^[a-z0-9.+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,6}$", email);
+		if(check)
+			return true;
+		else
+			throw new ValidationException("Invalid Email id");
+	}
+	
+	/**
+	 * Contains regex pattern to test password
+	 * @param password
+	 * @return True if matches regex pattern orterwise false
+	 * @throws ValidationException 
+	 */
+	public boolean getPassword(String password) throws ValidationException {
+		boolean check =Pattern.matches("^(?=.*[A-Z])(?=.*\\d)(?=.*[a-zA-z0-9!@#$%^&*()_+=-{};':<>,./?~`]).{8,}$", password);
+		if(check)
+			return true;
+		else
+			throw new ValidationException("Invalid Email id");
+	}
+
+	public static void main(String[] args) throws ValidationException {
+		Registration registration = new Registration();
+		registration.getFirstName("hrishi");
+
+	}
+
+}
